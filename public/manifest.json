@@ -1,5 +1,5 @@
 {
-  "short_name": "React App",
+  "short_name": "Braid",
   "name": "Braid Chrome Extension",
   "icons": {
     "512": "logo512.png"
@@ -10,7 +10,7 @@
   "theme_color": "#000000",
   "background_color": "#ffffff",
   "manifest_version": 2,
-  "version": "1.0.0",
+  "version": "0.0.0.1",
 
   "browser_action": {
     "default_icon": "favicon-32x32.png",
