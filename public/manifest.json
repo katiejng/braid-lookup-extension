@@ -1,0 +1,19 @@
+{
+  "short_name": "React App",
+  "name": "Braid Chrome Extension",
+  "icons": {
+    "512": "logo512.png"
+  },
+
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "manifest_version": 2,
+  "version": "1.0.0",
+
+  "browser_action": {
+    "default_icon": "favicon-32x32.png",
+    "default_popup": "seekAnz/index.html"
+  }
+}

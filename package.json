@@ -1,0 +1,30 @@
+{
+  "name": "sku-extension",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "sku start",
+    "test": "sku test",
+    "build": "sku build",
+    "serve": "sku serve",
+    "lint": "sku lint",
+    "format": "sku format"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "sku pre-commit"
+    }
+  },
+  "dependencies": {
+    "braid-design-system": "28.1.0",
+    "fuse.js": "^6.0.0",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "sku": "10.3.6"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
+    "husky": "^4.2.5"
+  }
+}
