@@ -2,7 +2,10 @@
   "short_name": "Braid",
   "name": "Braid Chrome Extension",
   "icons": {
-    "512": "logo512.png"
+    "16": "favicon-16x16.png",
+    "32": "favicon-32x32.png",
+    "48": "favicon-48x48.png",
+    "96": "favicon-96x96.png"
   },
 
   "start_url": ".",
