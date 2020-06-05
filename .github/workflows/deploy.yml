@@ -43,14 +43,10 @@ jobs:
     - name: Chrome Addon Action
       uses: trmcnvn/chrome-addon@v2
       with:
-        # ID of the extension that you are updating
-        extension: # optional
-        # Path to a .zip of your addon
-        zip: # optional
-        # Google OAuth2 client id
-        client-id: # optional
-        # Google OAuth2 client secret
-        client-secret: # optional
-        # Google OAuth2 refresh token
-        refresh-token: # optional
+        extension: djejlpbhhhhidocammjkigbcpdcggmgj
+        zip: dist.zip
+        client-id: ${{ secrets.CHROME_CLIENT_ID }}
+        client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
+        refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
+
 
