@@ -17,7 +17,6 @@
   },
   "dependencies": {
     "braid-design-system": "28.1.0",
-    "chrome-webstore-upload": "^0.2.2",
     "fuse.js": "6.0.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",
@@ -26,6 +25,7 @@
   "devDependencies": {
     "@types/react": "16.9.35",
     "@types/react-dom": "16.9.8",
-    "husky": "4.2.5"
+    "husky": "4.2.5",
+    "chrome-webstore-upload": "^0.2.2"
   }
 }
