@@ -31,6 +31,14 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
+    - name: Build
+      run: yarn && yarn build
+    
+    - name: zip
+      run: zip -r dist.zip dist
+    
+    - name: ls
+      run: ls
         
     - name: Chrome Addon Action
       uses: trmcnvn/chrome-addon@v2
