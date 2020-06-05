@@ -11,6 +11,7 @@ dist/
 report/
 tsconfig.json
 # end managed by sku
-
 dist.zip
 secret.env
+
+.DS_Store
