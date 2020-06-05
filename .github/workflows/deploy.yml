@@ -6,9 +6,9 @@ name: CI
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -19,34 +19,25 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
 
-    # Runs a single command using the runners shell
-    - name: Run a one-line script
-      run: echo Hello, world!
+      - name: Build
+        run: yarn && yarn build
 
-    # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
-    - name: Build
-      run: yarn && yarn build
-    
-    - name: zip
-      run: zip -r dist.zip dist
-    
-    - name: ls
-      run: ls
-        
-    - name: Chrome Addon Action
-      uses: trmcnvn/chrome-addon@v2
-      with:
-        extension: djejlpbhhhhidocammjkigbcpdcggmgj
-        zip: dist.zip
-        client-id: ${{ secrets.CHROME_CLIENT_ID }}
-        client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
-        refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
+      - name: zip for chrome
+        run: yarn zip:chrome
 
+      - name: zip for firefox
+        run: yarn zip:firefox
 
+      - name: ls
+        run: ls
+      # - name: Chrome Addon Action
+      #   uses: trmcnvn/chrome-addon@v2
+      #   with:
+      #     extension: djejlpbhhhhidocammjkigbcpdcggmgj
+      #     zip: chrome.zip
+      #     client-id: ${{ secrets.CHROME_CLIENT_ID }}
+      #     client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
+      #     refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
