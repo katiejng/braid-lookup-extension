@@ -11,10 +11,7 @@ dist/
 report/
 tsconfig.json
 # end managed by sku
-firefox.zip
-chrome.zip
 secret.env
-
 .DS_Store
-
 deploy.js
+packaged

@@ -10,9 +10,10 @@
     "lint": "sku lint",
     "format": "sku format",
     "build-zip": "yarn build && yarn zip:chrome && yarn zip:firefox",
-    "zip:chrome": "zip -r chrome.zip dist",
-    "zip:firefox": "cd dist; zip -r ../firefox.zip *",
-    "publish:chrome": "yarn build-zip && node .github/scripts/deploy.js"
+    "zip:chrome": "zip -r packaged/chrome.zip dist",
+    "zip:firefox": "yarn zip:source && cd dist; zip -r ../packaged/firefox.zip *",
+    "publish:chrome": "yarn build-zip && node .github/scripts/deploy.js",
+    "zip:source": "git archive HEAD -o packaged/sourceCode.zip"
   },
   "husky": {
     "hooks": {
