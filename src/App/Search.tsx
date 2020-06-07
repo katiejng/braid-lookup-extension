@@ -4,6 +4,9 @@ import {
   Stack,
   TextField,
   IconSearch,
+  IconNewWindow,
+  Heading,
+  Box,
 } from 'braid-design-system';
 import React, { useState, useRef } from 'react';
 
@@ -15,12 +18,21 @@ const Search = () => {
 
   const searchResults = useRef(components);
 
-  const resultItem = (component: { name: string }) => (
-    <Text key={component.name}>
-      <TextLink target="_blank" href={getBraidDocUrl(component.name)}>
-        {component.name}
-      </TextLink>
-    </Text>
+  const resultItem = (component: { name: string }, first: boolean) => (
+    <Box display="flex" flexDirection="row" marginY={first ? 'small' : 'none'}>
+      <Text key={component.name} size={first ? 'large' : 'standard'}>
+        <TextLink target="_blank" href={getBraidDocUrl(component.name)}>
+          {component.name}
+        </TextLink>
+      </Text>
+      {first && (
+        <Box display="flex" paddingLeft="xsmall">
+          <Text tone="secondary">
+            <IconNewWindow /> Press enter to open
+          </Text>
+        </Box>
+      )}
+    </Box>
   );
 
   return (
@@ -42,6 +54,7 @@ const Search = () => {
           icon={<IconSearch />}
           id="component-search"
           placeholder="Search"
+          autoComplete={'off'}
           onChange={(event) => {
             setSearchText(event.currentTarget.value);
             if (event.currentTarget.value === '') {
@@ -54,7 +67,9 @@ const Search = () => {
         />
       </form>
 
-      {searchResults.current.map((component) => resultItem(component))}
+      {searchResults.current.map((component, index) =>
+        resultItem(component, index === 0),
+      )}
     </Stack>
   );
 };
