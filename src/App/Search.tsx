@@ -38,6 +38,7 @@ const Search = () => {
         }}
       >
         <TextField
+          autoFocus
           icon={<IconSearch />}
           id="component-search"
           placeholder="Search"
