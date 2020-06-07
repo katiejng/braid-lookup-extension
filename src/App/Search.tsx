@@ -33,7 +33,7 @@ const Search = () => {
         placeholder="Search"
         onChange={(event) => {
           setSearchText(event.currentTarget.value);
-          setSearchResults(searchResult(searchText));
+          setSearchResults(searchResult(event.currentTarget.value));
         }}
         value={searchText}
       />
