@@ -25,6 +25,9 @@ jobs:
       - name: Build
         run: yarn && yarn build
 
+      - name: Set version number
+        run: yarn set-version $GITHUB_RUN_ID
+
       - name: zip for chrome
         run: yarn zip:chrome
 
@@ -33,11 +36,12 @@ jobs:
 
       - name: ls
         run: ls
-      # - name: Chrome Addon Action
-      #   uses: trmcnvn/chrome-addon@v2
-      #   with:
-      #     extension: djejlpbhhhhidocammjkigbcpdcggmgj
-      #     zip: chrome.zip
-      #     client-id: ${{ secrets.CHROME_CLIENT_ID }}
-      #     client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
-      #     refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
+
+      - name: Chrome Addon Action
+        uses: trmcnvn/chrome-addon@v2
+        with:
+          extension: djejlpbhhhhidocammjkigbcpdcggmgj
+          zip: packaged/chrome.zip
+          client-id: ${{ secrets.CHROME_CLIENT_ID }}
+          client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
+          refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}

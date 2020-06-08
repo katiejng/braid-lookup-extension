@@ -10,6 +10,7 @@
     "lint": "sku lint",
     "format": "sku format",
     "build-zip": "yarn build && yarn zip:chrome && yarn zip:firefox",
+    "set-version": ".github/scripts/generate_manifest.sh",
     "zip:chrome": "zip -r packaged/chrome.zip dist",
     "zip:firefox": "yarn zip:source && cd dist; zip -r ../packaged/firefox.zip *",
     "publish:chrome": "yarn build-zip && node .github/scripts/deploy.js",
