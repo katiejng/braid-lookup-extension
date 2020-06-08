@@ -24,7 +24,7 @@ jobs:
         run: yarn && yarn build
 
       - name: Set version number
-        run: yarn set-version $GITHUB_RUN_ID
+        run: yarn set-version $GITHUB_RUN_NUMBER
 
       - name: zip for chrome
         run: yarn zip:chrome
