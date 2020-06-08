@@ -26,6 +26,9 @@ jobs:
       - name: Set version number
         run: yarn set-version $GITHUB_RUN_NUMBER
 
+      - name: make output folder
+        run: mkdir packaged
+
       - name: zip for chrome
         run: yarn zip:chrome
 
