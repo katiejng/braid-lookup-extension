@@ -32,6 +32,6 @@
     "@types/react": "16.9.35",
     "@types/react-dom": "16.9.8",
     "husky": "4.2.5",
-    "chrome-webstore-upload": "^0.2.2"
+    "chrome-webstore-upload": "0.2.2"
   }
 }
