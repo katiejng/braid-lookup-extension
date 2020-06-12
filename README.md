@@ -1,6 +1,12 @@
-# sku-extension
+# Braid Lookup
 
 This project is powered by [sku](https://github.com/seek-oss/sku), [braid](https://github.com/seek-oss/braid-design-system) and built with [React](https://facebook.github.io/react).
+
+## Links
+
+[Chrome Web Store](https://chrome.google.com/webstore/detail/braid-lookup-extension/djejlpbhhhhidocammjkigbcpdcggmgj)
+[Firefox Addon](https://addons.mozilla.org/en-US/firefox/addon/braid-lookup-extension)
+
 
 ## Getting Started
 
