@@ -5,6 +5,7 @@ This project is powered by [sku](https://github.com/seek-oss/sku), [braid](https
 ## Links
 
 [Chrome Web Store](https://chrome.google.com/webstore/detail/braid-lookup-extension/djejlpbhhhhidocammjkigbcpdcggmgj)
+
 [Firefox Addon](https://addons.mozilla.org/en-US/firefox/addon/braid-lookup-extension)
 
 
