@@ -38,23 +38,23 @@ jobs:
       - name: ls
         run: ls packaged
 
-#       - name: Chrome Addon Action
-#         uses: trmcnvn/chrome-addon@v2
-#         with:
-#           extension: djejlpbhhhhidocammjkigbcpdcggmgj
-#           zip: packaged/chrome.zip
-#           client-id: ${{ secrets.CHROME_CLIENT_ID }}
-#           client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
-#           refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
+      #       - name: Chrome Addon Action
+      #         uses: trmcnvn/chrome-addon@v2
+      #         with:
+      #           extension: djejlpbhhhhidocammjkigbcpdcggmgj
+      #           zip: packaged/chrome.zip
+      #           client-id: ${{ secrets.CHROME_CLIENT_ID }}
+      #           client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
+      #           refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
 
-      - name: "web-ext build"
+      - name: 'web-ext build'
         id: web-ext-build
         uses: kewisch/action-web-ext@v1
         with:
           cmd: build
           source: dist
 
-      - name: "web-ext sign"
+      - name: 'web-ext sign'
         id: web-ext-sign
         uses: kewisch/action-web-ext@v1
         with:
@@ -64,5 +64,11 @@ jobs:
           apiKey: ${{ secrets.AMO_SIGN_KEY }}
           apiSecret: ${{ secrets.AMO_SIGN_SECRET }}
 
-      - name: ls
-        run: ls
+      - name: Firefox Addon Action
+        uses: trmcnvn/firefox-addon@v1
+        with:
+          uuid: '{bf3c2187-f4ae-4736-88b3-c528f59870b4}'
+          xpi: ${{ steps.web-ext-sign.outputs.target }}
+          manifest: dist/manifest.json
+          api-key: ${{ secrets.AMO_SIGN_KEY }}
+          api-secret: ${{ secrets.AMO_SIGN_SECRET }}
