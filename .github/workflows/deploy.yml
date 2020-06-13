@@ -46,3 +46,20 @@ jobs:
           client-id: ${{ secrets.CHROME_CLIENT_ID }}
           client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
           refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
+
+      - name: 'web-ext build'
+        id: web-ext-build
+        uses: kewisch/action-web-ext@v1
+        with:
+          cmd: build
+          source: dist
+
+      - name: 'web-ext sign'
+        id: web-ext-sign
+        uses: kewisch/action-web-ext@v1
+        with:
+          cmd: sign
+          source: ${{ steps.web-ext-build.outputs.target }}
+          channel: unlisted
+          apiKey: ${{ secrets.AMO_SIGN_KEY }}
+          apiSecret: ${{ secrets.AMO_SIGN_SECRET }}
