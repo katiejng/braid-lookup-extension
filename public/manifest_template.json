@@ -12,6 +12,7 @@
     "gecko": {
       "id": "{bf3c2187-f4ae-4736-88b3-c528f59870b4}",
       "strict_min_version": "42.0"
+    }
   },
   "start_url": ".",
   "display": "standalone",
@@ -19,7 +20,6 @@
   "background_color": "#ffffff",
   "manifest_version": 2,
   "version": "0.0.0.%VERSION_NUMBER%",
-
   "browser_action": {
     "default_icon": "favicon-32x32.png",
     "default_popup": "seekAnz/index.html"
