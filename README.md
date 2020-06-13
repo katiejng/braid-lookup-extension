@@ -51,3 +51,5 @@ yarn build
 
 1. zip contents of dist folder. I do this by highlighting all the files in dist and compressing.
 1. resulting zip file contains the extension
+
+hi
