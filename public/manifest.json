@@ -1,3 +1,4 @@
+/* DO NOT MODIFY. MODIFY manifest_template instead!!!*/
 {
   "short_name": "Braid",
   "name": "Braid Lookup Extension",
@@ -19,7 +20,6 @@
   "background_color": "#ffffff",
   "manifest_version": 2,
   "version": "0.0.0.8",
-
   "browser_action": {
     "default_icon": "favicon-32x32.png",
     "default_popup": "seekAnz/index.html"
