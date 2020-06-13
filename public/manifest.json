@@ -12,8 +12,7 @@
     "gecko": {
       "id": "{bf3c2187-f4ae-4736-88b3-c528f59870b4}",
       "strict_min_version": "42.0"
-  }.
-
+  },
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
