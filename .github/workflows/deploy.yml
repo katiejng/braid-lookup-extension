@@ -6,7 +6,7 @@ name: CI
 # events but only for the master branch
 on:
   push:
-    branches: [release]
+    branches: [firefox]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -38,11 +38,31 @@ jobs:
       - name: ls
         run: ls packaged
 
-      - name: Chrome Addon Action
-        uses: trmcnvn/chrome-addon@v2
+#       - name: Chrome Addon Action
+#         uses: trmcnvn/chrome-addon@v2
+#         with:
+#           extension: djejlpbhhhhidocammjkigbcpdcggmgj
+#           zip: packaged/chrome.zip
+#           client-id: ${{ secrets.CHROME_CLIENT_ID }}
+#           client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
+#           refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
+
+      - name: "web-ext build"
+        id: web-ext-build
+        uses: kewisch/action-web-ext@v1
         with:
-          extension: djejlpbhhhhidocammjkigbcpdcggmgj
-          zip: packaged/chrome.zip
-          client-id: ${{ secrets.CHROME_CLIENT_ID }}
-          client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
-          refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
+          cmd: build
+          source: dist
+
+      - name: "web-ext sign"
+        id: web-ext-sign
+        uses: kewisch/action-web-ext@v1
+        with:
+          cmd: sign
+          source: ${{ steps.web-ext-build.outputs.target }}
+          channel: unlisted
+          apiKey: ${{ secrets.AMO_SIGN_KEY }}
+          apiSecret: ${{ secrets.AMO_SIGN_SECRET }}
+
+      - name: ls
+        run: ls
