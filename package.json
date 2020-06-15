@@ -13,8 +13,8 @@
     "set-version": ".github/scripts/generate_manifest.sh",
     "zip:chrome": "zip -r packaged/chrome.zip dist",
     "zip:firefox": "yarn zip:source && cd dist; zip -r ../packaged/firefox.zip *",
-    "publish:chrome": "yarn build-zip && node .github/scripts/deploy.js",
-    "zip:source": "git archive HEAD -o packaged/sourceCode.zip"
+    "zip:source": "git archive HEAD -o packaged/sourceCode.zip",
+    "web-ext":"web-ext"
   },
   "husky": {
     "hooks": {
@@ -31,7 +31,8 @@
   "devDependencies": {
     "@types/react": "16.9.36",
     "@types/react-dom": "16.9.8",
+    "chrome-webstore-upload": "0.2.2",
     "husky": "4.2.5",
-    "chrome-webstore-upload": "0.2.2"
+    "web-ext": "^4.2.0"
   }
 }

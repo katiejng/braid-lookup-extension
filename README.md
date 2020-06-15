@@ -8,7 +8,6 @@ This project is powered by [sku](https://github.com/seek-oss/sku), [braid](https
 
 [Firefox Addon](https://addons.mozilla.org/en-US/firefox/addon/braid-lookup-extension)
 
-
 ## Getting Started
 
 First of all, make sure you&#39;ve installed [Yarn](https://yarnpkg.com).
@@ -48,13 +47,16 @@ $ yarn build
 
 # INSTRUCTIONS FOR FIREFOX
 
+To create signed xpi file.
+
+1. Requires Mozilla API key and secret.
 1. Requires node and yarn
 1. Run
 
 ```
 yarn
 yarn build
+yarn web-ext sign --api-key $MOZILLA_SECRET_KEY --api-secret $MOZILLA_SECRET_VALUE --channel unlisted -s dist
 ```
 
-1. zip contents of dist folder. I do this by highlighting all the files in dist and compressing.
-1. resulting zip file contains the extension
+xpi file should be in `web-ext-artifacts/braid_lookup_extension-....xpi`
