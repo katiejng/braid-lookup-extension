@@ -14,7 +14,7 @@
     "zip:chrome": "zip -r packaged/chrome.zip dist",
     "zip:firefox": "yarn zip:source && cd dist; zip -r ../packaged/firefox.zip *",
     "zip:source": "git archive HEAD -o packaged/sourceCode.zip",
-    "web-ext":"web-ext"
+    "web-ext": "web-ext"
   },
   "husky": {
     "hooks": {
@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "braid-design-system": "28.3.0",
+    "dotenv": "^8.2.0",
     "fuse.js": "6.0.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",

@@ -15,3 +15,5 @@ secret.env
 .DS_Store
 deploy.js
 packaged
+
+*.env
