@@ -1,9 +1,8 @@
 # Braid Lookup
 
-This repo builds and deploys a simple chrome and firefox extension for searching braid components. 
+This repo builds and deploys a simple chrome and firefox extension for searching braid components.
 
 ![screenshot of chrome extension](./public/screenshot_real.png)
-
 
 This project is powered by [sku](https://github.com/seek-oss/sku), [braid](https://github.com/seek-oss/braid-design-system) and built with [React](https://facebook.github.io/react).
 
@@ -51,12 +50,14 @@ $ yarn build
 ```
 
 Zip folders to be uploaded to chrome and firefox:
+
 ```bash
 $ yarn build-zip
 ```
 
 ## Releasing updates
-The code is automatically released using github Actions. 
+
+The code is automatically released using github Actions.
 Raise a PR from master to release branch to create a new release
 
 # INSTRUCTIONS FOR FIREFOX

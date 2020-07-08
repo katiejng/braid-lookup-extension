@@ -1,7 +1,9 @@
 import 'braid-design-system/reset'; // <-- Must be first
-import React from 'react';
 import { BraidLoadableProvider, Box, Stack } from 'braid-design-system';
+import React from 'react';
+
 import braidLogo from '../assets/logo.png';
+
 import Search from './Search';
 interface AppProps {
   site: string;

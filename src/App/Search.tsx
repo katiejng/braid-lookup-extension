@@ -5,18 +5,31 @@ import {
   TextField,
   IconSearch,
   IconNewWindow,
-  Heading,
   Box,
 } from 'braid-design-system';
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
-import { searchResult, components } from './utils/componentList';
+import {
+  searchResult,
+  getComponents,
+  ComponentItem,
+} from './utils/componentList';
 import { getBraidDocUrl } from './utils/helpers';
 
 const Search = () => {
   const [searchText, setSearchText] = useState('');
+  const [searchResults, setSearchResults] = useState<ComponentItem[]>([]);
+  const initialComponents = useRef<ComponentItem[]>([]);
 
-  const searchResults = useRef(components);
+  useEffect(() => {
+    async function fetchData() {
+      // You can await here
+      const componentList = await getComponents();
+      initialComponents.current = componentList;
+      setSearchResults(componentList);
+    }
+    fetchData();
+  }, []);
 
   const resultItem = (component: { name: string }, first: boolean) => (
     <Box display="flex" flexDirection="row" marginY={first ? 'small' : 'none'}>
@@ -40,9 +53,9 @@ const Search = () => {
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          if (searchResults.current.length > 0) {
+          if (searchResults.length > 0) {
             const win = window.open(
-              getBraidDocUrl(searchResults.current[0].name),
+              getBraidDocUrl(searchResults[0].name),
               '_blank',
             );
             win?.focus();
@@ -58,16 +71,18 @@ const Search = () => {
           onChange={(event) => {
             setSearchText(event.currentTarget.value);
             if (event.currentTarget.value === '') {
-              searchResults.current = components;
+              setSearchResults(initialComponents.current);
             } else {
-              searchResults.current = searchResult(event.currentTarget.value);
+              setSearchResults(
+                searchResult(searchResults, event.currentTarget.value),
+              );
             }
           }}
           value={searchText}
         />
       </form>
 
-      {searchResults.current.map((component, index) =>
+      {searchResults.map((component, index) =>
         resultItem(component, index === 0),
       )}
     </Stack>
