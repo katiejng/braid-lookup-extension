@@ -17,9 +17,9 @@
     "web-ext": "web-ext"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "0.19.2",
     "braid-design-system": "28.3.0",
-    "dotenv": "^8.2.0",
+    "dotenv": "8.2.0",
     "fuse.js": "6.0.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",
@@ -30,6 +30,6 @@
     "@types/react-dom": "16.9.8",
     "chrome-webstore-upload": "0.2.2",
     "husky": "4.2.5",
-    "web-ext": "^4.2.0"
+    "web-ext": "4.2.0"
   }
 }
