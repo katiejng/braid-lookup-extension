@@ -74,7 +74,10 @@ const Search = () => {
               setSearchResults(initialComponents.current);
             } else {
               setSearchResults(
-                searchResult(searchResults, event.currentTarget.value),
+                searchResult(
+                  initialComponents.current,
+                  event.currentTarget.value,
+                ),
               );
             }
           }}
