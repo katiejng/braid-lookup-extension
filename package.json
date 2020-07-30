@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "braid-design-system": "28.3.0",
+    "braid-design-system": "28.14.0",
     "dotenv": "^8.2.0",
     "fuse.js": "6.0.4",
     "react": "16.13.1",
