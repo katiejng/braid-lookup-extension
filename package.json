@@ -26,7 +26,7 @@
     "sku": "10.3.6"
   },
   "devDependencies": {
-    "@types/react": "16.9.36",
+    "@types/react": "17.0.0",
     "@types/react-dom": "16.9.8",
     "chrome-webstore-upload": "0.2.2",
     "husky": "4.2.5",
