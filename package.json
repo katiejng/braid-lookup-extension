@@ -23,7 +23,7 @@
     "fuse.js": "6.0.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "sku": "10.3.6"
+    "sku": "10.8.2"
   },
   "devDependencies": {
     "@types/react": "16.9.36",
