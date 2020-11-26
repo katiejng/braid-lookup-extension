@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@types/react": "16.9.36",
-    "@types/react-dom": "16.9.8",
+    "@types/react-dom": "16.9.10",
     "chrome-webstore-upload": "0.2.2",
     "husky": "4.2.5",
     "web-ext": "^4.2.0"
