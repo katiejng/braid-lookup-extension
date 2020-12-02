@@ -5,7 +5,7 @@
   "scripts": {
     "start": "sku start",
     "test": "sku test",
-    "build": "SKU_TELEMETRY=false && sku build",
+    "build": "SKU_TELEMETRY=false sku build",
     "serve": "sku serve",
     "lint": "sku lint",
     "format": "sku format",
