@@ -65,10 +65,11 @@ Raise a PR from master to release branch to create a new release
 To create signed xpi file.
 
 1. Requires Mozilla API key and secret.
-1. Requires node and yarn
+1. Requires node and yarn and nvm
 1. Run
 
 ```
+nvm use
 yarn
 yarn build
 yarn web-ext sign --api-key $MOZILLA_SECRET_KEY --api-secret $MOZILLA_SECRET_VALUE --channel unlisted -s dist
