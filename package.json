@@ -17,7 +17,7 @@
     "web-ext": "web-ext"
   },
   "dependencies": {
-    "axios": "0.21.0",
+    "axios": "0.21.2",
     "braid-design-system": "29.17.3",
     "dotenv": "8.2.0",
     "fuse.js": "6.4.3",
