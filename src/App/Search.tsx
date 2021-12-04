@@ -14,7 +14,6 @@ import {
   getComponents,
   ComponentItem,
 } from './utils/componentList';
-import { getBraidDocUrl } from './utils/helpers';
 
 const Search = () => {
   const [searchText, setSearchText] = useState('');
@@ -31,10 +30,10 @@ const Search = () => {
     fetchData();
   }, []);
 
-  const resultItem = (component: { name: string }, first: boolean) => (
+  const resultItem = (component: ComponentItem, first: boolean) => (
     <Box display="flex" flexDirection="row" marginY={first ? 'small' : 'none'}>
       <Text key={component.name} size={first ? 'large' : 'standard'}>
-        <TextLink target="_blank" href={getBraidDocUrl(component.name)}>
+        <TextLink target="_blank" href={component.link}>
           {component.name}
         </TextLink>
       </Text>
@@ -54,10 +53,7 @@ const Search = () => {
         onSubmit={(event) => {
           event.preventDefault();
           if (searchResults.length > 0) {
-            const win = window.open(
-              getBraidDocUrl(searchResults[0].name),
-              '_blank',
-            );
+            const win = window.open(searchResults[0].link, '_blank');
             win?.focus();
           }
         }}
