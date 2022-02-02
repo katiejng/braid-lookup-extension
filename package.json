@@ -17,19 +17,19 @@
     "web-ext": "web-ext"
   },
   "dependencies": {
-    "axios": "0.24.0",
-    "braid-design-system": "30.7.0",
-    "fuse.js": "6.4.6",
+    "axios": "0.25.0",
+    "braid-design-system": "31.4.0",
+    "fuse.js": "6.5.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "sku": "10.13.1"
+    "sku": "11.2.5"
   },
   "devDependencies": {
-    "dotenv": "8.2.0",
-    "@types/react": "17.0.37",
+    "dotenv": "16.0.0",
+    "@types/react": "17.0.38",
     "@types/react-dom": "17.0.11",
-    "chrome-webstore-upload": "0.4.2",
-    "husky": "4.3.0",
-    "web-ext": "5.4.0"
+    "chrome-webstore-upload": "1.0.0",
+    "husky": "7.0.4",
+    "web-ext": "6.6.0"
   }
 }
