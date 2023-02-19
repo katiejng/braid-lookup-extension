@@ -1,19 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom/server';
+import { renderToString } from 'react-dom/server';
 import { Render } from 'sku';
 
 import App from './App/App';
-import { ClientContext } from './types';
 
 interface RenderContext {
   appHtml: string;
 }
 
 const skuRender: Render<RenderContext> = {
-  renderApp: ({ SkuProvider, site }) => {
-    const appHtml = ReactDOM.renderToString(
+  renderApp: ({ SkuProvider }) => {
+    const appHtml = renderToString(
       <SkuProvider>
-        <App site={site} />
+        <App />
       </SkuProvider>,
     );
 
@@ -21,10 +20,6 @@ const skuRender: Render<RenderContext> = {
       appHtml,
     };
   },
-
-  provideClientContext: ({ site }): ClientContext => ({
-    site,
-  }),
 
   renderDocument: ({ app, bodyTags, headTags }) => `
     <!DOCTYPE html>
