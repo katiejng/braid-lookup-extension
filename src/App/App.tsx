@@ -1,21 +1,20 @@
 import 'braid-design-system/reset'; // <-- Must be first
-import { BraidLoadableProvider, Box, Stack } from 'braid-design-system';
+import { Box, Stack, BraidProvider } from 'braid-design-system';
+import apac from 'braid-design-system/themes/apac';
 import React from 'react';
 
+// @ts-expect-error
 import braidLogo from '../assets/logo.png';
 
 import Search from './Search';
-interface AppProps {
-  site: string;
-}
 
-export default ({ site }: AppProps) => (
-  <BraidLoadableProvider themeName={site}>
+export default () => (
+  <BraidProvider theme={apac}>
     <Box padding="small" style={{ minWidth: 300 }}>
       <Stack space="medium">
         <img src={braidLogo} alt="braid" width="300" />
         <Search />
       </Stack>
     </Box>
-  </BraidLoadableProvider>
+  </BraidProvider>
 );
