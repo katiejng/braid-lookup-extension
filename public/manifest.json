@@ -22,6 +22,13 @@
   "version": "0.0.0.8",
   "browser_action": {
     "default_icon": "favicon-32x32.png",
-    "default_popup": "apac/index.html"
+    "default_popup": "index.html"
+  },
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y"
+      }
+    }
   }
 }
