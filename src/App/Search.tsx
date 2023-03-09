@@ -55,6 +55,9 @@ const Search = () => {
           if (searchResults.length > 0) {
             const win = window.open(searchResults[0].link, '_blank');
             win?.focus();
+            
+            // Firefox doesn't automatically close the popup, so we need to close it manually
+            window.close();
           }
         }}
       >
