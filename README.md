@@ -57,10 +57,17 @@ $ yarn build-zip
 
 ## Releasing updates
 
-The code is automatically released using github Actions.
-Raise a PR from master to release branch to create a new release
+### Instructions for Chrome
 
-# INSTRUCTIONS FOR FIREFOX
+```sh
+yarn
+yarn build
+yarn set-version <version-number>
+yarn zip:chrome
+
+```
+
+### INSTRUCTIONS FOR FIREFOX
 
 To create signed xpi file.
 

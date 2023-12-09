@@ -1,6 +1,8 @@
 {
-  "short_name": "Braid",
+  "manifest_version": 3,
   "name": "Braid Lookup Extension",
+  "version": "0.0.0.%VERSION_NUMBER%",
+  "description": "An unofficial extension for developers using braid-design-system to quickly look up components",
   "icons": {
     "16": "favicon-16x16.png",
     "32": "favicon-32x32.png",
@@ -8,6 +10,7 @@
     "96": "favicon-96x96.png",
     "128": "favicon-128x128.png"
   },
+  "short_name": "Braid",
   "browser_specific_settings": {
     "gecko": {
       "id": "{bf3c2187-f4ae-4736-88b3-c528f59870b4}",
@@ -18,14 +21,12 @@
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff",
-  "manifest_version": 2,
-  "version": "0.0.0.%VERSION_NUMBER%",
-  "browser_action": {
+  "action": {
     "default_icon": "favicon-32x32.png",
     "default_popup": "index.html"
   },
   "commands": {
-    "_execute_browser_action": {
+    "_execute_action": {
       "suggested_key": {
         "default": "Ctrl+Shift+Y"
       }
